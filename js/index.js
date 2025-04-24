@@ -61,8 +61,11 @@ function getUserLocation() {
 
 window.addEventListener("load", getUserLocation);
 
-searchInput.addEventListener("input", function () {
-  search();
+searchInput.addEventListener("input", function (e) {
+  if(e.target.value.length >= 3){
+    search();
+  }
+  
 });
 
 function display(forecast, current, location) {
